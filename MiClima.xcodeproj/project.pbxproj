@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DF60F574244B4A6D00478922 /* ElClima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElClima.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF60F574244B4A6D00478922 /* MiClima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiClima.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF60F577244B4A6D00478922 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF60F579244B4A6D00478922 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DF60F57B244B4A6D00478922 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 		DF60F575244B4A6D00478922 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DF60F574244B4A6D00478922 /* ElClima.app */,
+				DF60F574244B4A6D00478922 /* MiClima.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,9 +82,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DF60F573244B4A6D00478922 /* ElClima */ = {
+		DF60F573244B4A6D00478922 /* MiClima */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DF60F588244B4A6F00478922 /* Build configuration list for PBXNativeTarget "ElClima" */;
+			buildConfigurationList = DF60F588244B4A6F00478922 /* Build configuration list for PBXNativeTarget "MiClima" */;
 			buildPhases = (
 				DF60F570244B4A6D00478922 /* Sources */,
 				DF60F571244B4A6D00478922 /* Frameworks */,
@@ -94,9 +94,9 @@
 			);
 			dependencies = (
 			);
-			name = ElClima;
+			name = MiClima;
 			productName = ElClima;
-			productReference = DF60F574244B4A6D00478922 /* ElClima.app */;
+			productReference = DF60F574244B4A6D00478922 /* MiClima.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -128,7 +128,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DF60F573244B4A6D00478922 /* ElClima */,
+				DF60F573244B4A6D00478922 /* MiClima */,
 			);
 		};
 /* End PBXProject section */
@@ -349,7 +349,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DF60F588244B4A6F00478922 /* Build configuration list for PBXNativeTarget "ElClima" */ = {
+		DF60F588244B4A6F00478922 /* Build configuration list for PBXNativeTarget "MiClima" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DF60F589244B4A6F00478922 /* Debug */,
