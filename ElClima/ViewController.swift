@@ -26,12 +26,12 @@ class ViewController: UIViewController {
     
     let localizedTitle = NSLocalizedString("Welcome", comment: "")
     
-    //var timer: Timer!
+    var timer: Timer!
     //var affirmationsNumber = 0
     
     
     //list of affirmations
-    let affirmations = [
+    @objc let affirmations = [
         "Me entusiasma la vida todo en mi es energia y optimismo.",
         "Todo esta bien en mi vida.",
         "Cada celula de mi cuerpo esta llena de energia y salud.",
@@ -48,6 +48,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        affirmationLabel.text = affirmations[Int.random(in: 0...13)]
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(getter: affirmations), userInfo: nil, repeats: true)
             
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -60,6 +63,12 @@ class ViewController: UIViewController {
         //this code says that the textfield needs to report back to the viewcontroller
         searchTextField.delegate = self
     }
+    
+   // @objc func changeAffirmation() {
+     //   affirmationLabel.affirmationLabel = .random()
+    //}
+    
+    
     @IBAction func locationPressed(_ sender: UIButton) {
            locationManager.requestLocation()
        }
