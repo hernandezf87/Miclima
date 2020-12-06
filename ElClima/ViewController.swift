@@ -11,24 +11,19 @@ import UIKit
 import CoreLocation
 
 class ViewController: UIViewController {
-    
-    
+        
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
-   
     @IBOutlet weak var searchTextField: UITextField!
-    
     @IBOutlet weak var affirmationLabel: UILabel!
+    @IBOutlet weak var englishLabelAffirmation: UILabel!
     
     var weatherManager = WeatherManager()
     let locationManager = CLLocationManager()//gets the location of the current location
-    
-    let localizedTitle = NSLocalizedString("Welcome", comment: "")
-    
+        
     var timer: Timer!
-    //var affirmationsNumber = 0
-    
     
     //list of affirmations
     @objc let affirmations = [
@@ -43,65 +38,65 @@ class ViewController: UIViewController {
         "Mi bien me viene de todas partes, de todas las personas y de todas las cosas",
         "Me doy permiso de ser todo lo que puedo ser",
         "Fluyo suavemente con la vida y en cada experiencia",
-        "Formo parte de la abundancia del universo.",
+        "Formo parte de la abundancia del universo."
     ]
     
+    @objc let englishAffirmations = [
+        "I am excited about life, everything in me is energy and optimism.",
+        "Everything is fine in my life.",
+        "Every cell in my body is full of energy and health.",
+        "I am perfect exactly as I am.",
+        "My future is bright and beautiful.",
+        "I deserve the best and I accept it right now.",
+        "Through love I take charge of the reconstruction of my life.",
+        "I'm in the right place, at the right time, doing the right thing",
+        "My good comes from everywhere, from all people and from all things",
+        "I give myself permission to be all that I can be",
+        "I flow smoothly with life and in every experience",
+        "I am part of the abundance of the universe."
+        ]
+    
+    //array of images
+    
+    var backgroundImages: [UIImage] = [
+        UIImage(named: "bolt.png")!,
+        UIImage(named: "cloud.png")!,
+        UIImage(named: "drizzle.png")!,
+        UIImage(named: "fog.png")!,
+        UIImage(named: "snow.png")!,
+        UIImage(named: "sun.png")!,
+    ]
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        affirmationLabel.text = affirmations[Int.random(in: 0...13)]
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(getter: affirmations), userInfo: nil, repeats: true)
+        backgroundImage.image = backgroundImages[.random(in: 0...8)]
+        
+        affirmationLabel.text = affirmations[.random(in: 0...1)]
+        
+        timer = Timer(timeInterval: 1.0, target: self, selector: #selector(getter: affirmations), userInfo: nil, repeats: true)
+        
+        englishLabelAffirmation.text = englishAffirmations[.random(in: 0...16)]
             
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
-        
         
         weatherManager.delegate = self
         
         // Do any additional setup after loading the view.
         //this code says that the textfield needs to report back to the viewcontroller
         searchTextField.delegate = self
+        
+        //image view section
+
     }
-    
-   // @objc func changeAffirmation() {
-     //   affirmationLabel.affirmationLabel = .random()
-    //}
-    
     
     @IBAction func locationPressed(_ sender: UIButton) {
            locationManager.requestLocation()
        }
 }
-    
-   // @IBAction func locationPressed(_ sender: UIButton) {
-     //   locationManager.requestLocation()
-    //}
-    
-
-    
-   // func addBannerViewToView(_ bannerView: GADBannerView) {
-     // bannerView.translatesAutoresizingMaskIntoConstraints = false
-      //view.addSubview(bannerView)
-      //view.addConstraints(
-       // [NSLayoutConstraint(item: bannerView,
-       //                     attribute: .bottom,
-        //                    relatedBy: .equal,
-         //                   toItem: bottomLayoutGuide,
-          //                  attribute: .top,
-           //                 multiplier: 1,
-            //                constant: 0),
-         //NSLayoutConstraint(item: bannerView,
-           //                 attribute: .centerX,
-             //               relatedBy: .equal,
-               //             toItem: view,
-                 //           attribute: .centerX,
-                   //         multiplier: 1,
-                     //       constant: 0)
-        //])
-     //}
-//}
-
 
 
 //MARK: - UITextFielddelegate
@@ -150,6 +145,7 @@ extension ViewController: WeatherManagerDelegate {
             DispatchQueue.main.async {
                 self.temperatureLabel.text = weather.temperatureString
                 self.conditionImageView.image = UIImage(systemName: weather.conditionName)
+                
                 self.cityLabel.text = weather.cityName
             }
         }
@@ -173,4 +169,5 @@ extension ViewController: CLLocationManagerDelegate {
         print(error)
     }
 }
+
 

@@ -1,7 +1,6 @@
 {
   "images" : [
     {
-      "filename" : "clouds-1.jpg",
       "idiom" : "universal"
     },
     {
@@ -11,7 +10,6 @@
           "value" : "light"
         }
       ],
-      "filename" : "clouds.jpg",
       "idiom" : "universal"
     },
     {
@@ -21,7 +19,6 @@
           "value" : "dark"
         }
       ],
-      "filename" : "dawnsky 5.jpeg",
       "idiom" : "universal"
     }
   ],
