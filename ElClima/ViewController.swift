@@ -23,7 +23,8 @@ class ViewController: UIViewController {
     var weatherManager = WeatherManager()
     let locationManager = CLLocationManager()//gets the location of the current location
         
-    var timer: Timer!
+    var counter = 0
+    var timer = Timer()
     
     //list of affirmations
     @objc let affirmations = [
@@ -71,13 +72,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backgroundImage.image = backgroundImages[.random(in: 0...8)]
+        backgroundImage.image = backgroundImages[.random(in: 0...7)]
         
-        affirmationLabel.text = affirmations[.random(in: 0...1)]
+        affirmationLabel.text = affirmations[.random(in: 0...13)]
         
-        timer = Timer(timeInterval: 1.0, target: self, selector: #selector(getter: affirmations), userInfo: nil, repeats: true)
+        timer = Timer(timeInterval: 0.5, target: self, selector: #selector(affirmationCount), userInfo: nil, repeats: true)
         
-        englishLabelAffirmation.text = englishAffirmations[.random(in: 0...16)]
+        englishLabelAffirmation.text = englishAffirmations[.random(in: 0...13)]
             
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -96,6 +97,11 @@ class ViewController: UIViewController {
     @IBAction func locationPressed(_ sender: UIButton) {
            locationManager.requestLocation()
        }
+    
+    @objc func affirmationCount() {
+        counter += 1
+        affirmationLabel.text = "\(affirmations)"
+    }
 }
 
 
