@@ -6,7 +6,6 @@
 //  Copyright © 2020 Francisco Hernandez. All rights reserved.
 //
 
-
 import UIKit
 import CoreLocation
 
@@ -22,64 +21,63 @@ class ViewController: UIViewController {
     
     var weatherManager = WeatherManager()
     let locationManager = CLLocationManager()//gets the location of the current location
-        
-    var counter = 0
-    var timer = Timer()
     
-    //list of affirmations
-    @objc let affirmations = [
-        "Me entusiasma la vida todo en mi es energia y optimismo.",
-        "Todo esta bien en mi vida.",
-        "Cada celula de mi cuerpo esta llena de energia y salud.",
-        "Yo soy perfecta exactamente como soy.",
-        "Mi futuro es brilante y hermoso.",
-        "Me meresco lo mejor y lo acepto ahora mismo.",
-        "Por medio del amor me ago cargo de la reconstrucion de mi vida.",
-        "Estoy en el lugar correcto, en el momento adeucado, aciendo lo correcto",
-        "Mi bien me viene de todas partes, de todas las personas y de todas las cosas",
-        "Me doy permiso de ser todo lo que puedo ser",
-        "Fluyo suavemente con la vida y en cada experiencia",
-        "Formo parte de la abundancia del universo."
-    ]
-    
-    @objc let englishAffirmations = [
-        "I am excited about life, everything in me is energy and optimism.",
-        "Everything is fine in my life.",
-        "Every cell in my body is full of energy and health.",
-        "I am perfect exactly as I am.",
-        "My future is bright and beautiful.",
-        "I deserve the best and I accept it right now.",
-        "Through love I take charge of the reconstruction of my life.",
-        "I'm in the right place, at the right time, doing the right thing",
-        "My good comes from everywhere, from all people and from all things",
-        "I give myself permission to be all that I can be",
-        "I flow smoothly with life and in every experience",
-        "I am part of the abundance of the universe."
-        ]
-    
-    //array of images
+    var timer: Timer!
     
     var backgroundImages: [UIImage] = [
         UIImage(named: "bolt.png")!,
         UIImage(named: "cloud.png")!,
-        UIImage(named: "drizzle.png")!,
-        UIImage(named: "fog.png")!,
         UIImage(named: "snow.png")!,
+        UIImage(named: "drizzle.png")!,
+        UIImage(named: "rain.png")!,
         UIImage(named: "sun.png")!,
+        UIImage(named: "fog.png")!,
+       
+        
+    ]
+            
+    //list of affirmations
+    @objc var affirmations: [ String] =
+       ["ME ENTUSIASMA LA VIDA, TODO EN MI ES ENERGIA Y OPTIMISMO.",
+        "TODO ESTA BIEN EN MI VIDA.",
+        "CADA CELULA DE MI CUERPO ESTA LLENA DE ENERGIA Y SALUD.",
+        "YO SOY PERFECTA EXACTAMENTE COMO SOY.",
+        "MI FUTURO ES BRILLANTE Y HERMOSO.",
+        "ME MERESCO LO MEJOR Y LO ACEPTO AHORA MISMO.",
+        "POR MEDIO DEL AMOR ME AGO CARGO DE LA RECONSTRUCION DE MI VIDA.",
+        "ESTOY EN EL LUGAR CORRECTO, EN EL MOMENTO ADEUCADO, ACIENDO LO CORRECTO",
+        "MI BIEN ME VIENE DE TODAS PARTES, DE TODAS LAS PERSONAS Y DE TODAS LAS COSAS",
+        "ME DOY PERMISO DE SER TODO LO QUE PUEDO SER",
+        "FLUYO SUAVEMENTE CON LA VIDA Y EN CADA EXPERIENCIA",
+        "FORMO PARTE DE LA ABUNDANCIA DEL UNIVERSO."
     ]
     
-
+    @objc var englishAffirmations = [
+        "I AM EXICTED ABOUT LIFE, EVERYTHING IN ME IS ENERGY AND OPTIMISM.",
+        "EVERYTHING IS FINE IN MY LIFE.",
+        "EVERY CELL IN MY BODY IS FULL OF ENERGY AND HEALTH.",
+        "I AM PERFECT EXACTLY AS I AM.",
+        "MY FUTURE IS BRIGHT AND BEAUTIFUL.",
+        "I DESERVE THE BEST AND I ACCEPT IT RIGHT NOW.",
+        "THROUGH LOVE I TAKE CHARGE OF THE RECONSTRUCTION OF MY LIFE.",
+        "I'M IN THE RIGHT PLACE, AT THE RIGHT TIME, DOING THE RIGHT THING",
+        "MY GOOD COMES FROM EVERYWHERE, FROM ALL THE PEOPLE AND FROM ALL THINGS",
+        "I GIVE MYSELF PERMISSION TO BE ALL THAT I CAN BE",
+        "I FLOW SMOOTHLY WITH LIFE AND IN EVERY EXPERIENCE",
+        "I AM PART OF THE ABUNDANCE OF THE UNIVERSE."
+        ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backgroundImage.image = backgroundImages[.random(in: 0...7)]
+        self.setupToHideKeyboardOnTapOnView()
+        changeAffirmationsLabel()
+        changeEnglishLabel()
         
-        affirmationLabel.text = affirmations[.random(in: 0...13)]
+        timer = Timer.scheduledTimer(timeInterval: 12.5, target: self, selector: #selector(changeEnglishLabel), userInfo: nil, repeats: true)
         
-        timer = Timer(timeInterval: 0.5, target: self, selector: #selector(affirmationCount), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 10.5, target: self, selector: #selector(changeAffirmationsLabel), userInfo: nil, repeats: true)
         
-        englishLabelAffirmation.text = englishAffirmations[.random(in: 0...13)]
-            
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
@@ -89,21 +87,33 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         //this code says that the textfield needs to report back to the viewcontroller
         searchTextField.delegate = self
-        
-        //image view section
-
+    }
+    
+    @objc func changeAffirmationsLabel() {
+        affirmationLabel.text = affirmations[.random(in: 0...11)]
+    }
+    
+    @objc func changeEnglishLabel() {
+        englishLabelAffirmation.text = englishAffirmations[.random(in: 0...11)]
     }
     
     @IBAction func locationPressed(_ sender: UIButton) {
            locationManager.requestLocation()
        }
-    
-    @objc func affirmationCount() {
-        counter += 1
-        affirmationLabel.text = "\(affirmations)"
-    }
 }
 
+extension UIViewController {
+    
+    func setupToHideKeyboardOnTapOnView() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
 
 //MARK: - UITextFielddelegate
 
@@ -122,15 +132,16 @@ extension ViewController: UITextFieldDelegate {
 //        print(searchTextField.text!)
         return true
     }
+    
     //if the user did not type something/ they need to type something
-       func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-           if textField.text != "" {
-               return true
-           } else {
-               textField.placeholder = "Type a city"
-               return false
-           }
-       }
+//       func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+//           if textField.text != "" {
+//               return true
+//           } else {
+//               textField.placeholder = "Type a city"
+//               return false
+//           }
+//       }
     
     //this resets the placeholder after the user hits return
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -151,8 +162,25 @@ extension ViewController: WeatherManagerDelegate {
             DispatchQueue.main.async {
                 self.temperatureLabel.text = weather.temperatureString
                 self.conditionImageView.image = UIImage(systemName: weather.conditionName)
-                
+                self.backgroundImage.image = UIImage(systemName: weather.conditionName)
                 self.cityLabel.text = weather.cityName
+               
+                switch weather.conditionName {
+                case "cloud.bolt":
+                    self.backgroundImage.image = UIImage(named: "bolt.png");
+                case "cloud.drizzle":
+                    self.backgroundImage.image = UIImage(named: "drizzle.png");
+                case "cloud.rain":
+                    self.backgroundImage.image = UIImage(named: "rain.png");
+                case "cloud.snow":
+                    self.backgroundImage.image = UIImage(named: "snow.png");
+                case "cloud.fog":
+                    self.backgroundImage.image = UIImage(named: "fog.png");
+                case "sun.max":
+                    self.backgroundImage.image = UIImage(named: "sun.png");
+                default:
+                    print("error")
+                }
             }
         }
         func didFailWithError(error: Error) {

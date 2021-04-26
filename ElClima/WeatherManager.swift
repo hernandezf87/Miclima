@@ -72,5 +72,7 @@ struct WeatherManager {
         }
     }
     
+   
+    
 }
 
