@@ -8,10 +8,12 @@
 
 import UIKit
 import CoreLocation
+import AVFoundation
+import AVKit
 
 class ViewController: UIViewController {
         
-    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var backgroundImage: UIView!
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
@@ -24,17 +26,15 @@ class ViewController: UIViewController {
     
     var timer: Timer!
     
-    var backgroundImages: [UIImage] = [
-        UIImage(named: "bolt.png")!,
-        UIImage(named: "cloud.png")!,
-        UIImage(named: "snow.png")!,
-        UIImage(named: "drizzle.png")!,
-        UIImage(named: "rain.png")!,
-        UIImage(named: "sun.png")!,
-        UIImage(named: "fog.png")!,
-       
-        
-    ]
+//    var backgroundImages: [UIImage] = [
+//        UIImage(named: "bolt.png")!,
+//        UIImage(named: "cloud.png")!,
+//        UIImage(named: "snow.png")!,
+//        UIImage(named: "drizzle.png")!,
+//        UIImage(named: "rain.png")!,
+//        UIImage(named: "sun.png")!,
+//        UIImage(named: "fog.png")!,
+//    ]
             
     //list of affirmations
     @objc var affirmations: [ String] =
@@ -132,17 +132,7 @@ extension ViewController: UITextFieldDelegate {
 //        print(searchTextField.text!)
         return true
     }
-    
-    //if the user did not type something/ they need to type something
-//       func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-//           if textField.text != "" {
-//               return true
-//           } else {
-//               textField.placeholder = "Type a city"
-//               return false
-//           }
-//       }
-    
+   
     //this resets the placeholder after the user hits return
     func textFieldDidEndEditing(_ textField: UITextField) {
         
@@ -162,22 +152,92 @@ extension ViewController: WeatherManagerDelegate {
             DispatchQueue.main.async {
                 self.temperatureLabel.text = weather.temperatureString
                 self.conditionImageView.image = UIImage(systemName: weather.conditionName)
-                self.backgroundImage.image = UIImage(systemName: weather.conditionName)
+                //self.backgroundImage.image = UIImage(systemName: weather.conditionName)
                 self.cityLabel.text = weather.cityName
                
                 switch weather.conditionName {
                 case "cloud.bolt":
-                    self.backgroundImage.image = UIImage(named: "bolt.png");
+                    let path = URL(fileURLWithPath: Bundle.main.path(forResource: "Lighting", ofType: "mp4")!)
+                    let player = AVPlayer(url: path)
+                    let newLayer = AVPlayerLayer(player: player)
+                    newLayer.frame = self.backgroundImage.frame
+                    self.backgroundImage.layer.addSublayer(newLayer)
+                    newLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+                
+                        player.play()
+                    //self.backgroundImage.image = UIImage(named: "bolt.png");
+                    
+                    
                 case "cloud.drizzle":
-                    self.backgroundImage.image = UIImage(named: "drizzle.png");
+                    let path = URL(fileURLWithPath: Bundle.main.path(forResource: "Drizzle", ofType: "mp4")!)
+                                   let playerOne = AVPlayer(url: path)
+                                   
+                                   let newLayer = AVPlayerLayer(player: playerOne)
+                                   
+                                   newLayer.frame = self.backgroundImage.frame
+                                   self.backgroundImage.layer.addSublayer(newLayer)
+                                   newLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+                                   
+                                   playerOne.play()
+                    //self.backgroundImage.image = UIImage(named: "drizzle.png");
+                    
+                    
                 case "cloud.rain":
-                    self.backgroundImage.image = UIImage(named: "rain.png");
-                case "cloud.snow":
-                    self.backgroundImage.image = UIImage(named: "snow.png");
+                    let path = URL(fileURLWithPath: Bundle.main.path(forResource: "Rain", ofType: "mp4")!)
+                    let playerTwo = AVPlayer(url: path)
+                    
+                    let newLayer = AVPlayerLayer(player: playerTwo)
+                    
+                    newLayer.frame = self.backgroundImage.frame
+                    self.backgroundImage.layer.addSublayer(newLayer)
+                    newLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+                    
+                    playerTwo.play()
+                    //self.backgroundImage.image = UIImage(named: "rain.png");
+                    
+                    
+                case "cloud.snow": 
+                    let path = URL(fileURLWithPath: Bundle.main.path(forResource: "Snowfall1", ofType: "mp4")!)
+                    let playerThree = AVPlayer(url: path)
+                    
+                    let newLayer = AVPlayerLayer(player: playerThree)
+                    
+                    newLayer.frame = self.backgroundImage.frame
+                    self.backgroundImage.layer.addSublayer(newLayer)
+                    newLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+                    
+                    playerThree.play()
+                    //self.backgroundImage.image = UIImage(named: "snow.png");
+                    
+                    
                 case "cloud.fog":
-                    self.backgroundImage.image = UIImage(named: "fog.png");
+                    let path = URL(fileURLWithPath: (Bundle.main.path(forResource: "Fog", ofType: "mp4"))!)
+                    let playerFour = AVPlayer(url: path)
+                    
+                    let newLayer = AVPlayerLayer(player: playerFour)
+                    
+                    newLayer.frame = self.backgroundImage.frame
+                    self.backgroundImage.layer.addSublayer(newLayer)
+                    newLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+                    
+                    playerFour.play()
+                    //self.backgroundImage.image = UIImage(named: "fog.png");
+                    
+                    
                 case "sun.max":
-                    self.backgroundImage.image = UIImage(named: "sun.png");
+                    let path = URL(fileURLWithPath: (Bundle.main.path(forResource: "Sun", ofType: "mp4"))!)
+                    let playerFive = AVPlayer(url: path)
+                    
+                    let newLayer = AVPlayerLayer(player: playerFive)
+                    
+                    newLayer.frame = self.backgroundImage.frame
+                    self.backgroundImage.layer.addSublayer(newLayer)
+                    newLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+                    
+                    playerFive.play()
+                    //self.backgroundImage.image = UIImage(named: "sun.png");
+                    
+                    
                 default:
                     print("error")
                 }

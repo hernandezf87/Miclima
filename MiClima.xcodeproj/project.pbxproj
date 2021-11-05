@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF2AC68B2727C61E0033C70C /* Snowfall1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DF2AC68A2727C61E0033C70C /* Snowfall1.mp4 */; };
 		DF60F578244B4A6D00478922 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60F577244B4A6D00478922 /* AppDelegate.swift */; };
 		DF60F57A244B4A6D00478922 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60F579244B4A6D00478922 /* SceneDelegate.swift */; };
 		DF60F57C244B4A6D00478922 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60F57B244B4A6D00478922 /* ViewController.swift */; };
@@ -16,9 +17,17 @@
 		DF60F58C244B5CB800478922 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60F58B244B5CB800478922 /* WeatherModel.swift */; };
 		DF60F58E244B5CE000478922 /* WeatheData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60F58D244B5CE000478922 /* WeatheData.swift */; };
 		DF60F590244B5CFE00478922 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60F58F244B5CFE00478922 /* WeatherManager.swift */; };
+		DFC5475F271D470C00EBF4B9 /* Clouds.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DFC5475E271D470C00EBF4B9 /* Clouds.mp4 */; };
+		DFC54763271D4CD800EBF4B9 /* Lighting.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DFC54762271D4CD800EBF4B9 /* Lighting.mp4 */; };
+		DFE6456527208F3100FD1BD4 /* Fog.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DFE6456027208F2F00FD1BD4 /* Fog.mp4 */; };
+		DFE6456627208F3100FD1BD4 /* Snow.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DFE6456127208F2F00FD1BD4 /* Snow.mp4 */; };
+		DFE6456727208F3100FD1BD4 /* Rain.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DFE6456227208F3000FD1BD4 /* Rain.mp4 */; };
+		DFE6456827208F3100FD1BD4 /* Sun.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DFE6456327208F3000FD1BD4 /* Sun.mp4 */; };
+		DFE6456927208F3100FD1BD4 /* Drizzle.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DFE6456427208F3100FD1BD4 /* Drizzle.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF2AC68A2727C61E0033C70C /* Snowfall1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Snowfall1.mp4; sourceTree = "<group>"; };
 		DF60F574244B4A6D00478922 /* MiClima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiClima.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF60F577244B4A6D00478922 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF60F579244B4A6D00478922 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +42,13 @@
 		DFC47EDE24CE9909005FA1C8 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Main.strings"; sourceTree = "<group>"; };
 		DFC47EDF24CE990A005FA1C8 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		DFC47EED24D13C97005FA1C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		DFC5475E271D470C00EBF4B9 /* Clouds.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Clouds.mp4; sourceTree = "<group>"; };
+		DFC54762271D4CD800EBF4B9 /* Lighting.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lighting.mp4; sourceTree = "<group>"; };
+		DFE6456027208F2F00FD1BD4 /* Fog.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fog.mp4; sourceTree = "<group>"; };
+		DFE6456127208F2F00FD1BD4 /* Snow.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Snow.mp4; sourceTree = "<group>"; };
+		DFE6456227208F3000FD1BD4 /* Rain.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rain.mp4; sourceTree = "<group>"; };
+		DFE6456327208F3000FD1BD4 /* Sun.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sun.mp4; sourceTree = "<group>"; };
+		DFE6456427208F3100FD1BD4 /* Drizzle.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Drizzle.mp4; sourceTree = "<group>"; };
 		DFE9B0BE2557C53600B53AB5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +82,14 @@
 		DF60F576244B4A6D00478922 /* ElClima */ = {
 			isa = PBXGroup;
 			children = (
+				DF2AC68A2727C61E0033C70C /* Snowfall1.mp4 */,
+				DFE6456427208F3100FD1BD4 /* Drizzle.mp4 */,
+				DFE6456027208F2F00FD1BD4 /* Fog.mp4 */,
+				DFE6456227208F3000FD1BD4 /* Rain.mp4 */,
+				DFE6456127208F2F00FD1BD4 /* Snow.mp4 */,
+				DFE6456327208F3000FD1BD4 /* Sun.mp4 */,
+				DFC54762271D4CD800EBF4B9 /* Lighting.mp4 */,
+				DFC5475E271D470C00EBF4B9 /* Clouds.mp4 */,
 				DF60F577244B4A6D00478922 /* AppDelegate.swift */,
 				DF60F579244B4A6D00478922 /* SceneDelegate.swift */,
 				DF60F57B244B4A6D00478922 /* ViewController.swift */,
@@ -116,7 +140,7 @@
 				};
 			};
 			buildConfigurationList = DF60F56F244B4A6D00478922 /* Build configuration list for PBXProject "MiClima" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.4";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -139,9 +163,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFE6456527208F3100FD1BD4 /* Fog.mp4 in Resources */,
+				DFE6456727208F3100FD1BD4 /* Rain.mp4 in Resources */,
 				DF60F584244B4A6F00478922 /* LaunchScreen.storyboard in Resources */,
+				DFE6456827208F3100FD1BD4 /* Sun.mp4 in Resources */,
 				DF60F581244B4A6F00478922 /* Assets.xcassets in Resources */,
+				DF2AC68B2727C61E0033C70C /* Snowfall1.mp4 in Resources */,
+				DFE6456627208F3100FD1BD4 /* Snow.mp4 in Resources */,
 				DF60F57F244B4A6D00478922 /* Main.storyboard in Resources */,
+				DFC54763271D4CD800EBF4B9 /* Lighting.mp4 in Resources */,
+				DFE6456927208F3100FD1BD4 /* Drizzle.mp4 in Resources */,
+				DFC5475F271D470C00EBF4B9 /* Clouds.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,15 +343,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 84Y94U66TP;
 				INFOPLIST_FILE = ElClima/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.franciscoh.ElClima;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -334,15 +366,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 84Y94U66TP;
 				INFOPLIST_FILE = ElClima/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.franciscoh.ElClima;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
