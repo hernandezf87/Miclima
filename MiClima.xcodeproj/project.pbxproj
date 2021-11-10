@@ -63,6 +63,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF3362FB273B886100BCA77F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DF60F57B244B4A6D00478922 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DF3362FC273B886F00BCA77F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF60F57D244B4A6D00478922 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF3362FD273B887800BCA77F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF60F58F244B5CFE00478922 /* WeatherManager.swift */,
+				DF60F58B244B5CB800478922 /* WeatherModel.swift */,
+				DF60F58D244B5CE000478922 /* WeatheData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF3362FE273B88B300BCA77F /* Mp4's */ = {
+			isa = PBXGroup;
+			children = (
+				DF2AC68A2727C61E0033C70C /* Snowfall1.mp4 */,
+				DFE6456427208F3100FD1BD4 /* Drizzle.mp4 */,
+				DFE6456027208F2F00FD1BD4 /* Fog.mp4 */,
+				DFE6456227208F3000FD1BD4 /* Rain.mp4 */,
+				DFE6456127208F2F00FD1BD4 /* Snow.mp4 */,
+				DFE6456327208F3000FD1BD4 /* Sun.mp4 */,
+				DFC54762271D4CD800EBF4B9 /* Lighting.mp4 */,
+				DFC5475E271D470C00EBF4B9 /* Clouds.mp4 */,
+			);
+			path = "Mp4's";
+			sourceTree = "<group>";
+		};
 		DF60F56B244B4A6D00478922 = {
 			isa = PBXGroup;
 			children = (
@@ -82,21 +123,12 @@
 		DF60F576244B4A6D00478922 /* ElClima */ = {
 			isa = PBXGroup;
 			children = (
-				DF2AC68A2727C61E0033C70C /* Snowfall1.mp4 */,
-				DFE6456427208F3100FD1BD4 /* Drizzle.mp4 */,
-				DFE6456027208F2F00FD1BD4 /* Fog.mp4 */,
-				DFE6456227208F3000FD1BD4 /* Rain.mp4 */,
-				DFE6456127208F2F00FD1BD4 /* Snow.mp4 */,
-				DFE6456327208F3000FD1BD4 /* Sun.mp4 */,
-				DFC54762271D4CD800EBF4B9 /* Lighting.mp4 */,
-				DFC5475E271D470C00EBF4B9 /* Clouds.mp4 */,
 				DF60F577244B4A6D00478922 /* AppDelegate.swift */,
 				DF60F579244B4A6D00478922 /* SceneDelegate.swift */,
-				DF60F57B244B4A6D00478922 /* ViewController.swift */,
-				DF60F58B244B5CB800478922 /* WeatherModel.swift */,
-				DF60F58D244B5CE000478922 /* WeatheData.swift */,
-				DF60F58F244B5CFE00478922 /* WeatherManager.swift */,
-				DF60F57D244B4A6D00478922 /* Main.storyboard */,
+				DF3362FE273B88B300BCA77F /* Mp4's */,
+				DF3362FD273B887800BCA77F /* Model */,
+				DF3362FC273B886F00BCA77F /* View */,
+				DF3362FB273B886100BCA77F /* Controller */,
 				DF60F580244B4A6F00478922 /* Assets.xcassets */,
 				DF60F582244B4A6F00478922 /* LaunchScreen.storyboard */,
 				DF60F585244B4A6F00478922 /* Info.plist */,
